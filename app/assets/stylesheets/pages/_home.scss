@@ -1,1 +1,36 @@
 // Specific CSS for your home-page
+h1 {
+  font-size: 24px;
+  font-weight: 700;
+}
+
+
+h2 {
+  font-size: 16px;
+  font-weight: 600;
+  margin: 0 0;
+}
+
+h3 {
+  font-size: 14px;
+  font-weight: 600;
+  margin: 0 0;
+}
+
+p {
+  font-size: 12px;
+}
+
+.tab-heads {
+  border: solid gray;
+  margin-bottom: 20px;
+  padding: 10px 5px;
+  border-radius: 5px;
+}
+
+.tab-line {
+  border: solid gray;
+  margin-bottom: 5px;
+  padding: 10px 5px;
+  border-radius: 5px;
+}
