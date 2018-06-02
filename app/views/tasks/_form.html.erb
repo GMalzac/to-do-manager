@@ -1,0 +1,13 @@
+<%= simple_form_for [@task] do |f| %>
+<%= f.error_notification %>
+
+  <%= f.input :name %>
+  <%= f.input :description %>
+  <%= f.input :category %>
+  <%= f.input :priority, prompt: '1 being the highest priority', collection: ['1', '2', '3'] %>
+  <%= f.input :comments %>
+  <%= f.input :deadline %>
+  <%= f.submit "OK", class: "btn btn-primary" %>
+<% end %>
+
+<%= link_to "All tasks", tasks_path  %>

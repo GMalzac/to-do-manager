@@ -1,0 +1,53 @@
+<h1>My TO DO List</h1>
+
+<div class="row">
+  <div class="col-lg-2">
+    <h2>Task</h2>
+  </div>
+  <div class="col-lg-4">
+    <h2>Description</h2>
+  </div>
+  <div class="col-lg-1">
+    <h2>Category</h2>
+  </div>
+  <div class="col-lg-1">
+    <%= task.priority %>
+  </div>
+  <div class="col-lg-2">
+    <%= task.deadline %>
+  </div>
+  <div class="col-lg-1">
+    <%= link_to "edit", edit_task_path(task.id) %>
+  </div>
+  <div class="col-lg-1">
+    <%= link_to "delete", task_path(task.id), method: :delete %>
+  </div>
+</div>
+
+<% @tasks.each do |task| %>
+  <div class="row">
+    <div class="col-lg-2">
+      <%= task.name %>
+    </div>
+    <div class="col-lg-4">
+      <%= task.description %>
+    </div>
+    <div class="col-lg-1">
+      <%= task.category %>
+    </div>
+    <div class="col-lg-1">
+      <%= task.priority %>
+    </div>
+    <div class="col-lg-2">
+      <%= task.deadline %>
+    </div>
+    <div class="col-lg-1">
+      <%= link_to "edit", edit_task_path(task.id) %>
+    </div>
+    <div class="col-lg-1">
+      <%= link_to "delete", task_path(task.id), method: :delete %>
+    </div>
+  </div>
+<% end %>
+</ul>
+<%= link_to "Add task", new_task_path  %>
