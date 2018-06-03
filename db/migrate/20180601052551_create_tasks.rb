@@ -7,7 +7,7 @@ class CreateTasks < ActiveRecord::Migration[5.1]
       t.integer :priority
       t.string :comments
       t.date :deadline
-
+      t.boolean :done, null: false, default: false
       t.timestamps
     end
   end
