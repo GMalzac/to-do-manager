@@ -26,9 +26,12 @@
 
 <% @tasks.each do |task| %>
   <div class="row tab-line">
-    <div class="col-xs-1 tab-cell">
-      <%= task.id %>
-      <%= link_to "#{task.done}", switch_done_path(task)%>
+    <div class="col-xs-1 tab-cell", style="text-align: center">
+      <% if task.done %>
+        <%= link_to "", switch_done_path(task), class:"fas fa-check-circle done"%>
+      <% else %>
+        <%= link_to "", switch_done_path(task), class:"far fa-check-circle not-done"%>
+      <% end %>
     </div>
     <div class="col-xs-3 tab-cell">
       <h3> <%= task.name %> </h3>

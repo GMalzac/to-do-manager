@@ -40,7 +40,7 @@ class TasksController < ApplicationController
     else
       @task.done = true
     end
-    @task.update(task_params)
+    @task.update(task_params_done)
     redirect_to tasks_path
   end
 
@@ -51,6 +51,10 @@ class TasksController < ApplicationController
   end
 
   def task_params
+    params.require(:task).permit(:name, :description, :category, :priority, :comments, :deadline, :done)
+  end
+
+  def task_params_done
     params.permit(:name, :description, :category, :priority, :comments, :deadline, :done)
   end
 end
