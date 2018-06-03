@@ -1,6 +1,9 @@
 <h1>My TO DO List</h1>
 
 <div class="row tab-heads" style="text-align: center">
+  <div class="col-xs-1">
+    <h2>Done?</h2>
+  </div>
   <div class="col-xs-3">
     <h2>Task</h2>
   </div>
@@ -16,35 +19,42 @@
   <div class="col-xs-1">
     <h2>Deadline</h2>
   </div>
-  <div class="col-xs-2">
+  <div class="col-xs-1">
     <h2>Actions</h2>
   </div>
 </div>
 
 <% @tasks.each do |task| %>
   <div class="row tab-line">
-    <div class="col-xs-3">
+    <div class="col-xs-1 tab-cell">
+      <h3> <%= task.done %> </h3>
+    </div>
+    <div class="col-xs-3 tab-cell">
       <h3> <%= task.name %> </h3>
     </div>
-    <div class="col-xs-4">
+    <div class="col-xs-4 tab-cell">
       <p><%= task.description %> </p>
     </div>
-    <div class="col-xs-1" style="text-align: center">
+    <div class="col-xs-1 tab-cell" style="text-align: center">
       <p><%= task.category %> </p>
     </div>
-    <div class="col-xs-1"  style="text-align: center">
+    <div class="col-xs-1 tab-cell"  style="text-align: center">
       <p><%= task.priority %> </p>
     </div>
-    <div class="col-xs-1" style="text-align: center">
+    <div class="col-xs-1 tab-cell" style="text-align: center">
       <p><%= task.deadline %> </p>
     </div>
-    <div class="col-xs-1" style="text-align: center">
-      <p><%= link_to "edit", edit_task_path(task.id) %> </p>
-    </div>
-    <div class="col-xs-1" style="text-align: center">
-      <p><%= link_to "delete", task_path(task.id), method: :delete %> </p>
+    <div class="col-xs-1 tab-cell" style="text-align: center">
+      <p><%= link_to "", edit_task_path(task.id), class:"fas fa-edit fa-lg" %> </p>
+      <p><%= link_to "", task_path(task.id), method: :delete, class:"fas fa-trash-alt fa-lg delete-icon" %> </p>
     </div>
   </div>
 <% end %>
-</ul>
-<%= link_to "Add task", new_task_path  %>
+
+<br>
+
+<div style="text-align: right">
+  <button type="button" class="add-button btn-success">
+    <%= link_to "", new_task_path, class:"fas fa-plus fa-2x" %>
+  </button>
+</div>

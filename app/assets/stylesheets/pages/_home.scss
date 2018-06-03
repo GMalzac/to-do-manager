@@ -2,6 +2,7 @@
 h1 {
   font-size: 24px;
   font-weight: 700;
+  padding-bottom: 20px;
 }
 
 
@@ -19,6 +20,7 @@ h3 {
 
 p {
   font-size: 12px;
+  margin-bottom: 0px;
 }
 
 .tab-heads {
@@ -29,8 +31,33 @@ p {
 }
 
 .tab-line {
-  border: solid gray;
+  border: solid #a8a4a4;
   margin-bottom: 5px;
   padding: 10px 5px;
   border-radius: 5px;
+  display: flex;
+}
+
+.tab-cell {
+  margin: auto;
+}
+
+.add-button {
+  width: 70px;
+  height: 70px;
+  padding: 0px;
+  font-size: 24px;
+  box-shadow: 3px 3px 3px gray;
+  text-align: center;
+  border: none;
+  border-radius: 50%;
+}
+
+.add-button a {
+  text-decoration: none;
+  color: white;
+}
+
+.delete-icon {
+  color: #FE5F55;
 }
