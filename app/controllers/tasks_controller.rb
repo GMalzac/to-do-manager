@@ -1,5 +1,5 @@
 class TasksController < ApplicationController
-  before_action :set_task, only: [:show, :edit, :update, :destroy]
+  before_action :set_task, only: [:show, :edit, :update, :destroy, :switch_done_status]
 
   def index
     @tasks = Task.all
@@ -34,6 +34,15 @@ class TasksController < ApplicationController
     redirect_to tasks_path
   end
 
+  def switch_done_status
+    if @task.done
+      @task.done = false
+    else
+      @task.done = true
+    end
+    redirect_to update_path(@task), method: :patch
+  end
+
   private
 
   def set_task
@@ -41,7 +50,7 @@ class TasksController < ApplicationController
   end
 
   def task_params
-    params.require(:task).permit(:name, :description, :category, :priority, :comments, :deadline)
+    params.require(:task).permit(:name, :description, :category, :priority, :comments, :deadline, :done)
   end
 end
 

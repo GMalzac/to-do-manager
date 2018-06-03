@@ -27,11 +27,8 @@
 <% @tasks.each do |task| %>
   <div class="row tab-line">
     <div class="col-xs-1 tab-cell">
-      <% if task.done %>
-        <i class="fas fa-check-circle", style="color: #32B796"></i>
-        <% else %>
-        <i class="far fa-check-circle", style="color: #a8a4a4"></i>
-      <% end %>
+      <%= task.id %>
+      <%= link_to "#{task.done}", switch_done_path(task)%>
     </div>
     <div class="col-xs-3 tab-cell">
       <h3> <%= task.name %> </h3>
