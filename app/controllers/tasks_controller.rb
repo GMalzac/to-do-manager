@@ -40,7 +40,8 @@ class TasksController < ApplicationController
     else
       @task.done = true
     end
-    redirect_to update_path(@task), method: :patch
+    @task.update(task_params)
+    redirect_to tasks_path
   end
 
   private
@@ -50,7 +51,7 @@ class TasksController < ApplicationController
   end
 
   def task_params
-    params.require(:task).permit(:name, :description, :category, :priority, :comments, :deadline, :done)
+    params.permit(:name, :description, :category, :priority, :comments, :deadline, :done)
   end
 end
 
