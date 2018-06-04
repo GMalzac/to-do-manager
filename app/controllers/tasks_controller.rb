@@ -40,7 +40,7 @@ class TasksController < ApplicationController
     else
       @task.done = true
     end
-    @task.update(task_params_done)
+    @task.save
     redirect_to tasks_path
   end
 
