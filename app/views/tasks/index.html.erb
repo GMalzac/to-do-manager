@@ -50,7 +50,7 @@
     </div>
     <div class="col-xs-1 tab-cell" style="text-align: center">
       <p><%= link_to "", edit_task_path(task.id), class:"fas fa-edit fa-lg" %> </p>
-      <p><%= link_to "", task_path(task.id), method: :delete, class:"fas fa-trash-alt fa-lg delete-icon" %> </p>
+      <p><%= link_to "", task_path(task.id), method: :delete, data: { confirm: 'Are you sure?' }, class:"fas fa-trash-alt fa-lg delete-icon" %> </p>
     </div>
   </div>
 <% end %>
